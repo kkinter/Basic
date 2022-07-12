@@ -1,4 +1,4 @@
-numbers = [0, 20, 100]
+numbers = [-10, -20, -100]
 temp = numbers[0]
 for i in numbers:
     if i > temp:
