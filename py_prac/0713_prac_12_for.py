@@ -1,4 +1,3 @@
-from unittest import result
 
 
 def foo(word):
@@ -7,4 +6,4 @@ def foo(word):
         if i != 'a':
             result += i
     return result
-print(foo('apple'))
+print(foo('applaaaaaaaaaaae'))
