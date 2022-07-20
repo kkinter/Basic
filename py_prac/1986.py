@@ -8,3 +8,8 @@ for i in range(t):
         if j % 2 == 1:
             sum_val += j
     print(f"#{i+1} {sum_val}")
+# 1933
+# 2019
+# 2050
+# 1986
+# 1284

@@ -1,6 +1,6 @@
 t = int(input())
 
-for i in range(1,t+1):
+for i in range(1,31):
     li = set()
     s =input()
     for j in s:

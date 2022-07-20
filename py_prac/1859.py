@@ -1,9 +1,11 @@
-import sys
-t= int(sys.stdin.readline())
+
+#시간초과
+
+t= int(input())
 
 for i in range(1,t+1):
-    n = int(sys.stdin.readline())
-    li = list(map(int,sys.stdin.readline().split()))
+    n = int(input())
+    li = list(map(int,input().split()))
 
     sum_val = 0
     length = len(li)

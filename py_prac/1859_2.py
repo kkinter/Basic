@@ -1,4 +1,4 @@
-
+## 시간 복잡도 n^3 ?
 
 t= int(input())
 
@@ -10,8 +10,8 @@ for i in range(1,t+1):
     length = len(li)
     for j in range(len(li)):
         max_val = max(li[j:len(li)])
-        if j < max_val:
-            sum_val += max_val - j
+        if li[j] < max_val:
+            sum_val += max_val - li[j]
         
     
 
