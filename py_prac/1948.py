@@ -8,9 +8,9 @@ for i in range(t):
     sum_date1 = 0
     sum_date2 = 0
     for j in range(1,m1+1):
-        sum_date1 += li[j-1] 
+        sum_date1 += li[j] 
     sum_date1 += d1
     for k in range(1,m2+1):
-        sum_date2 += li[k-1] 
+        sum_date2 += li[k] 
     sum_date2 += d2
     print(f"#{i+1} {sum_date2-sum_date1+1}")

@@ -1,6 +1,6 @@
 t = int(input())
 
-for i in range(t):
+for j in range(t):
     s= input()
     cnt = 0
     word = s[0]
@@ -10,7 +10,7 @@ for i in range(t):
             break
         else:
             word += s[i]
-    print(f"#{i+1} {len(word)}")             
+    print(f"#{j+1} {len(word)}")             
     # while len(s) > len(word):
     #     if word in s:
     #         s = s.replace(word,'',1)

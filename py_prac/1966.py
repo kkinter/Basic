@@ -8,4 +8,4 @@ for i in range(t):
             for q in range(length-k-1):
                 if temp_li[q] > temp_li[q+1]:
                     temp_li[q], temp_li[q+1] = temp_li[q+1], temp_li[q]      
-        print(f"{i+1} {temp_li}")
+        print(f"#{i+1} {temp_li}")

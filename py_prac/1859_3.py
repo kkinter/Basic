@@ -14,3 +14,6 @@ for i in range(1,t+1):
             sum_val += max_val - li[cnt]
         cnt += 1
     print(f"#{i} {str(sum_val)}")
+
+
+    
