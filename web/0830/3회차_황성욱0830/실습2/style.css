@@ -1,0 +1,55 @@
+/* 아래에 CSS를 작성해주세요. */
+* {
+  box-sizing: border-box;
+}
+.card-image{
+  width: 300px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.card-section{
+  float: left;
+  
+}
+.content{
+  margin-left: 6%;
+  margin-right: 6%;
+}
+.content-text{
+  float: left;
+}
+.brand{
+  font-size: 10px;
+  color: gray;
+  line-height: 1px;
+}
+.product-title{
+  font-size: 14px;
+  line-height: 3px;
+}
+.content2{
+  line-height: 14px;
+}
+.discount-rate{
+  font-size: 18px;
+  font-weight: bold;
+  color: royalblue;
+} 
+.price{
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+
+}
+.rate{
+  font-size: 8px;
+  font-weight: bold;
+  
+}
+.reviewer{
+  font-size: 8px;
+  font-weight: bold;
+  color: gray;
+
+}
