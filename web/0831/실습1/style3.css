@@ -1,0 +1,38 @@
+.title{
+  text-align: center;
+}
+.sub-title{
+  font-size: small;
+}
+
+.card{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 960px;
+
+  
+}
+.card-image{
+  width: 300px;
+  border-radius: 1rem;
+}
+.section{
+  width: 300px;
+
+}
+.text{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.sub{
+  font-size: 8px;
+}
+.main{
+  font-weight: bold;
+  margin-top: -5px;
+}
+.content{
+  font-size: 4px;
+  margin-top: -5px;
+}
