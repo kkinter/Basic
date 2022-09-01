@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  min-width: 1280px;
+  height: 10000px;
+  color: #333333;
+}
+/* 네비게이션  */
+.item{
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+  margin-left: 6rem;
+  margin-right: 6rem;
+
+}
+.item-list{
+  display: flex;
+  list-style: none;
+  background-color: gainsboro;
+  opacity: 60%;
+  border-radius: 1rem;
+}
+.nav-item{
+  
+  margin: 10px;
+}
+.nav-link{
+  text-decoration: none;
+}
+.nav-link:hover{
+  background-color: powderblue;
+}
+.nav-link:visited{
+  color: black;
+}
+/* 배너 */
+.banner-section{
+  height: 700px;
+  text-align: center;
+  background-image: url("../assets/apparel.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+  margin-bottom: 3rem;
+}
+/* 본문 */
+section{
+  width: 1280px;
+  margin:0 auto;
+}
+.about{
+  display: flex;
+  
+}
+.about-img{
+  width: 500px;
+  border-radius: 2rem;
+  margin-right: 3rem;
+}
+.about-content-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.about-content-content{
+  line-height: 2rem;
+}
+
+.more-title{
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.more-img-list{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.more-img-item{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 7rem;
+}
+.more-img{
+  width: 64px;
+  height: 64px;
+}
+/* 프로덕트 */
+.card-list{
+  width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  margin:0 auto;
+}
+.card{
+  border: 1px solid black;
+  width: 400px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.card-img{
+  width: 95%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.con-title{
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.con-content{
+  text-align: left;
+  padding: 0rem 1rem 1rem 1rem;
+}
