@@ -121,3 +121,7 @@ section{
   text-align: left;
   padding: 0rem 1rem 1rem 1rem;
 }
+.btn{
+  position: fixed;
+  right: 20rem;
+}
