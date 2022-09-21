@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .ball{
+      margin: 1rem;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background-color: aqua;
+      line-height: 5rem;
+      text-align: center;
+    }
+
+    .ball-title{
+      margin: 1rem;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background-color: rosybrown;
+      line-height: 5rem;
+      text-align: center;
+    }
+    .ball-container{
+      display: flex;
+    }
+
+    .ball-container2{
+      display: flex;
+    }
+    #res{
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #res2{
+      display: flex;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <h2>로또 추천 번호</h2>
+  <hr>
+  <button class="ltBtn">하나씩 뽑기</button>
+  <button class="ltBtn2">한 번에 뽑기</button>
+  <div id="res">
+    <div class="ball-title">하나씩</div>
+  </div>
+
+  <hr>
+  <div id="res2">
+    <div class="ball-title">한 번에</div>
+  </div>
+  <!-- <div class="ball-container">
+
+    <div class="ball">5</div>
+    <div class="ball">5</div>
+    <div class="ball">5</div>
+    <div class="ball">5</div>
+    <div class="ball">5</div>
+    <div class="ball">5</div>
+  </div> -->
+</body>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script>
+  var colors = [
+    'yello',
+    'green',
+    'pink',
+    'orange',
+    'aqua',
+    'brown'
+  ]
+
+  let cnt = 0
+  const Btn = document.querySelector(".ltBtn")
+  // Btn.addEventListener("click", function(){
+  //   console.log("hi")
+  // })
+
+  const ballContainer = document.createElement('div')
+  ballContainer.classList.add("ball-container")
+  
+  Btn.addEventListener("click", function(){
+    let numbers = _.sampleSize(_.range(1, 46), 6)
+    console.log(numbers)
+    
+    const ball = document.createElement('div')
+    ball.classList.add('ball')
+    // ball의 텍스트를 5라고 붙힘
+    console.log(Math.floor(numbers[cnt]/8))
+    ball.style.backgroundColor = colors[Math.floor(numbers[cnt]/8)]
+    // ball.innerText = 5
+    ball.innerText = numbers[cnt]
+    // ballContainer의 자손에 볼을 추가
+    ballContainer.appendChild(ball)
+    // id가 res인 div의 자손에 ballContainer 를 추가
+    const res = document.querySelector("#res")
+    res.appendChild(ballContainer)
+    cnt ++
+    
+    if(cnt > 6){
+      cnt = 0;
+      ballContainer.innerHTML = "";
+      
+    }
+    console.log(cnt)
+
+  })
+
+  const Btn2 = document.querySelector(".ltBtn2")
+  
+  const ballContainer2 = document.createElement('div')
+
+  ballContainer2.classList.add("ball-container2")
+
+  
+  var flag = 0
+  Btn2.addEventListener("click", function(){
+    
+    if(flag === 0){
+      const numbers2 = _.sampleSize(_.range(1, 46), 6)
+      const res2 = document.querySelector("#res2")
+      for (var i = 0; i < 6; i++){
+        let ball2 = document.createElement('div');
+        ball2.classList.add('ball');
+        
+        ball2.style.backgroundColor = colors[Math.floor(numbers2[i]/8)]
+        ball2.innerText = numbers2[i];
+        ballContainer2.appendChild(ball2)
+      }
+      res2.appendChild(ballContainer2)
+      flag++
+    } else{
+      ballContainer2.innerHTML= "";
+      flag--;
+    }
+    // const numbers2 = _.sampleSize(_.range(1, 46), 6)
+    // // const ball2 = document.createElement('div')
+    // const res2 = document.querySelector("#res2")
+    // for (var i = 0; i < 6; i++){
+    //   let ball2 = document.createElement('div');
+    //   ball2.classList.add('ball');
+    //   ball2.innerText = numbers2[i];
+    //   ballContainer2.appendChild(ball2)
+    // }
+    // res2.appendChild(ballContainer2)
+  })
+  
+</script>
+</html>
