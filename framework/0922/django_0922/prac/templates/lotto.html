@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    .ball_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .ball {
+      margin: 1rem;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: aquamarine;
+      text-align: center;
+    }
+
+    .add_ball {
+      margin: 1rem;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: red;
+      text-align: center;
+    }
+
+    .result {
+      background-color: bisque;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- {{ ltNum }} -->
+  {% for num_li in res %}
+  <div class="ball_container">
+    
+  
+    {% for num in num_li %}
+      {% if forloop.last %}      
+        <div class="result badge">{{ num }}</div>              
+      {% elif forloop.counter == 7 %}    
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+      </svg> 
+        <div class="add_ball d-flex align-items-center justify-content-center fs-2 text-white">{{ num }}</div>        
+      {% else %}
+        <div class="ball d-flex align-items-center justify-content-center fs-2 text-white">{{ num }} </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endfor %}
+  <p></p>
+ 
+</body>
+<script>
+  const res = document.querySelectorAll('.result')
+  console.log(res.innerHTML)
+  for(var i = 0; i < 5; i++){
+    console.log(res[i].innerHTML)
+    if(res[i].innerHTML === "꽝"){
+      res[i].style.backgroundColor = "red";
+    }
+  }
+  const ball = document.querySelectorAll('.ball')
+  
+  for(var j = 0; j < 30; j++){
+    console.log(ball[j].textContent)
+    if(ball[j].textContent > 39){
+      ball[j].style.backgroundColor = "green";
+    } else if(ball[j].textContent > 29){
+      ball[j].style.backgroundColor = "orange";
+    } else if(ball[j].textContent > 19){
+      ball[j].style.backgroundColor = "blue";
+    } else if(ball[j].textContent > 9){
+      ball[j].style.backgroundColor = "gray";
+    } else{
+      ball[j].style.backgroundColor = "navy";
+    }
+  }
+
+</script>
+</html>
