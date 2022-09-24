@@ -134,8 +134,8 @@ def index(request):
 <img src="{% get_static_prefix %}img/{{din_img}}.jpg" alt="4">
 ```
 
-쟝고 문법
+**쟝고 문법**
 
 [[django] 파이썬 Django(장고) 템플릿 문법](https://goodthings4me.tistory.com/92)
 
-
+**시크릿키 분리하기**
