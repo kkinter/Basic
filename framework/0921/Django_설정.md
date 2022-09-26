@@ -24,7 +24,7 @@ pip list
 
 ```
 pip install <이름>==<버전>
-pip install django==3.2.12
+pip install django==3.2.13
 ```
 
 **프로젝트 생성**
@@ -89,7 +89,7 @@ url > view > templates
 
 1. 가상환경 생성 실행
 
-2.  django LTS 버전 설치
+2. django LTS 버전 설치
 
 3. django 프로젝트 생성
 
@@ -109,21 +109,15 @@ def index(request):
 
     return render(request, "index.html")
 
-
-
 **오류**
 
 [Python could not be resolved Pylance from source 모듈 인식 안될때 해결방법](https://incomeplus.tistory.com/187)
-
-
 
 **경로를 맞게 설정했으나, 이미지 Not Found 오류가 있음**
 
 > static 설정이 필요함
 
 ![](C:\Users\Wook\AppData\Roaming\marktext\images\2022-09-22-15-01-24-image.png)
-
-
 
 ****static에 변수 선언   ****
 
