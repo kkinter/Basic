@@ -1,0 +1,19 @@
+{% extends 'articles/base.html'%}
+{% block content %}  
+index.html
+<p><a href="">글 작성하기</a></p>
+<form action="{% url 'articles:create' %}">
+  <input type="text" name="title">
+  <input type="text" name="content">
+  <input type="submit">
+</form>
+{% for review in reviews %}
+  <p>{{ review.id }} - {{ review.title }} - 
+    <a href="{% url 'articles:detail' review.pk %}">
+      {{ review.content }}
+    </a>
+  </p>
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% block content %}
+
+<form action="">
+  <input type="text" name="update-title" value="{{ review.title }}">
+  <input type="text" name="update-content" value="{{ review.content }}">
+  <input type="submit">
+</form>
+
+
+<a href="{% url 'articles:delete' review.pk %}">[삭제]</a>
+<a href="">[변경]</a>
+
+{% endblock %}
