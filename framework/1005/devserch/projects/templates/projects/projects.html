@@ -1,0 +1,12 @@
+{% extends 'main.html'%}
+
+{% block content %}
+<h1>projects Template</h1>
+{% for project in projects %}
+ <p>{{ project.title }} {{ project.vote_ratio }} {{ project.vote_total }} 
+  <a href="{% url 'project' project.id %}">상세 보기</a>
+  <a href="{% url 'delete-project' project.id %}">지우기</a>
+  <a href="{% url 'update-project' project.id %}">수정 하기</a>
+ </p>
+{% endfor %}
+{% endblock %}
