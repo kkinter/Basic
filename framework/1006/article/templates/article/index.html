@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>index.html</h1>
+<table>
+  <thead>
+    <th>ID</th>
+    <th>제목</th>
+    <th>내용</th>
+  </thead>
+  {% for review in reviews %}
+  <tbody>
+    <tr>
+      <td>{{ review.id }}</td>
+      <td>{{ review.title }}</td>
+      <td>{{ review.content }}</td>
+      <td><a href="{% url 'article:detail-review' review.pk %}"> 상세 보기 </a></td>
+      <td><a href="{% url 'article:delete-review' review.pk%}">삭제</a></td>
+      <td><a href="{% url 'article:update-review' review.id%}">변경</a></td>
+    </tr>
+  </tbody>
+  {% endfor %}
+  
+
+</table>
+{{ reviews.title }}
+
+{% endblock %}
