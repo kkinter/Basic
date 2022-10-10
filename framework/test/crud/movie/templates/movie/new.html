@@ -1,0 +1,17 @@
+{% extends 'movie/base.html' %}
+{% block content %}
+
+<div class="container">
+  <h1>new.html</h1>
+  <form action="{% url 'movie:create'%}">
+    <label for="title">제목</label>
+    <input class="form-control mb-3" type="text" name="title" id="title" required>
+    <label for="content">내용</label>
+    <textarea class="form-control" type="text" name="content" id="content" required></textarea>
+      <div class="d-grid">
+      <input class="btn btn-primary" type="submit" value="리뷰 생성">
+    </div>
+  </form>
+</div>
+
+{% endblock %}
