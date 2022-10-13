@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <h1>detail.html</h1>
+  <p>{{ user.id }}</p>
+  <p>{{ user }}</p>
+  <p>{{ user.email }}</p>
+  <a href="{% url 'accounts:index' %}">
+    <button class='btn btn-primary'>
+      돌아가기
+    </button>
+  </a>
+
+{% endblock content %}
