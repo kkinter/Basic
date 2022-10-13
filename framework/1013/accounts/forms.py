@@ -19,12 +19,14 @@ class CustomUserChangeForm(UserChangeForm):
     
     class Meta:
         model = get_user_model()
-        
-        fields = [
+        fields = ['email', 'first_name', 'last_name']
+        help_texts = {k:"" for k in fields}
+
+        # fields = [
             
-            'email', 
-            'first_name',
-            'last_name',
+        #     'email', 
+        #     'first_name',
+        #     'last_name',
             
-        ]
+        # ]
         

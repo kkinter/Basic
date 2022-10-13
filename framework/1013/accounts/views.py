@@ -68,6 +68,8 @@ from accounts.forms import CustomUserChangeForm
 
 @login_required
 def update(request, pk):
+    user_id = request.user.id
+
     if request.method == 'POST':
         form = CustomUserChangeForm(request.POST, instance=request.user)
         if form.is_valid():
@@ -76,7 +78,8 @@ def update(request, pk):
     else:
         form = CustomUserChangeForm(instance=request.user)
     context = {
-        'form': form
+        'form': form,
+        'user_id' : user_id,
     }
     return render(request, 'accounts/update.html', context)
 

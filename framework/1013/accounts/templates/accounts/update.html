@@ -8,10 +8,19 @@
       {% csrf_token %}
 
       {% bootstrap_form form %}
+
       <div class="d-grid mb-1">
         <input type="submit" value="수정하기" class="btn btn-primary">
       </div>
     </form>
+    <a href="{% url 'accounts:update_password' user_id%}">
+      <div class="d-grid mb-1">
+        <button class="btn btn-light">
+          비밀번호 수정
+        </button>
+      </div>
+    </a>
+
     <a href="{% url 'accounts:delete'%}">
       <div class="d-grid mb-1">
         <button class="btn btn-danger">
