@@ -26,7 +26,7 @@
   </table>
 
   <!-- 페이지네이션 -->
-  <nav>
+  {% comment %} <nav>
     <ul>
       {% if users.has_previous %}
         <li>
@@ -58,6 +58,79 @@
         </li>
       {% endif %}
     </ul>
+  </nav> {% endcomment %}
+  <!-- 페이지네이션 bootstrap-->
+  <nav aria-label="...">
+    <ul class="pagination justify-content-center">
+      {% if users.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{users.previous_page_number}}">이전</a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" href="#">이전</a>
+        </li>
+      {% endif %}
+
+      {% for page_number in users.paginator.page_range %}
+        {% if page_number == users.number %}
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+          </li>
+        {% else %}
+          <li class="page-item" aria-current="page">
+            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+
+      {% if users.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{users.next_page_number}}">다음</a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" href="#">다음</a>
+        </li>
+      {% endif %}
+    </ul>
   </nav>
+
+  {% comment %} <nav aria-label="...">
+    <ul class="pagination justify-content-center">
+      {% if users.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{users.previous_page_number}}">이전</a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" href="#">이전</a>
+        </li>
+      {% endif %}
+      {% for page_number in users.paginator.page_range %}
+        {% if page_number >= users.number | add : -1 and page_number <= users.number | add : 1 %}
+          {% if page_number == users.number %}
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+            </li>
+          {% else %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% if users.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{users.next_page_number}}">다음</a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" href="#">다음</a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav> {% endcomment %}
 
 {% endblock content %}
