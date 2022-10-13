@@ -3,14 +3,22 @@ from django.shortcuts import render, redirect
 from accounts.forms import CustomUserCreationForm
 from accounts.models import Users
 # Create your views here.
+
+from django.core.paginator import Paginator
 def index(request):
-    users = Users.objects.all()
+    # users = Users.objects.all()
     msg = 'HI'
     if not request.user.is_authenticated:
         msg = 'Hi, Anonymous User'
     else:
         msg = f'Hi, {request.user}'
-    
+    #입력 파라미터
+    page = int(request.GET.get("page", 1))
+    #조회 방법
+    users = Users.objects.all().order_by("-id")
+    #페이징 처리
+    paginator = Paginator(users, 10) # 페이지당 10개씩
+    users = paginator.get_page(page)
 
     context = {
         'users': users,

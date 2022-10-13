@@ -45,6 +45,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_seed',
     'django_bootstrap5',
     'accounts',
     'django.contrib.admin',
