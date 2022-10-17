@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <p>{{ user }}</p>
+  <p>{{ user.email }}</p>
+  <p>{{ user.date_joined }}</p>
+  <p>{{ user.first_name }}</p>
+  <p>{{ user.last_name }}</p>
+  <p>
+    <a href="{% url 'accounts:update' user.id %}">
+      수정하기
+    </a>
+  </p>
+  <p>
+    <a href="{% url 'accounts:delete' user.id %}">
+      삭제하기
+    </a>
+  </p>
+{% endblock content %}

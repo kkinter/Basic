@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container">
+    <h1>accounts/index.html</h1>
+    <hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>이름</th>
+          <th>이메일</th>
+          <th>가입일</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for user in users %}
+          <tr>
+            <td>{{ user.id }}</td>
+            <td>
+              <a href="{% url 'accounts:detail' user.pk %}">
+                {{ user }}
+              </a>
+            </td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.date_joined }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}

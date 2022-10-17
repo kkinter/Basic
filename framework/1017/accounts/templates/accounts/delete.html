@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% load django_bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <h1>accounts/delete.html</h1>
+  <h2>계정을 정말 삭제하시겠습니까?</h2>
+  <form method="POST">
+    {% csrf_token %}
+
+    <input type="submit" value="제출">
+
+  </form>
+{% endblock %}
