@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>articles - index.html</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>제목</th>
+        <th>최근 수정일</th>
+        <th>댓글</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for article in articles %}
+        <tr>
+          <td>{{ article.id }}</td>
+          <td>
+            <a href="{% url 'articles:detail' article.id %}">{{ article.title }}</a>
+          </td>
+          <td>{{ article.updated_at }}</td>
+          <td>
+            <span class="badge bg-secondary">{{ article.comment_set.all|length}}
+              개</span>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}
