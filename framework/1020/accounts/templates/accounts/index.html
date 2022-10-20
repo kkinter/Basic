@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>accounts/index.html</h1>
+
+  <table class="table">
+    <thead>
+      <th>PK</th>
+      <th>NAME</th>
+      <th>ID</th>
+      <th>Email</th>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+          <td>{{ user.pk }}</td>
+          <td>{{ user.last_name }}
+            {{ user.first_name }}
+          </td>
+          <td>{{ user.id }}</td>
+          <td>{{ user.email }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock content %}

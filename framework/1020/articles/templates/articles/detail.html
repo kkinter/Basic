@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>articles/detail.html</h1>
+  <img src="{{ article.image.url }}" alt="{{ article.image }}" width="400" height="300">
+  <h1>{{ article.pk }}</h1>
+  <h1>{{ article.title }}</h1>
+  <h1>{{ article.content }}</h1>
+  <h1>{{ article.user }}</h1>
+  <hr>
+  <form method="POST" action="{% url 'articles:comment_create' article.pk%}">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <input type="submit">
+  </form>
+  <hr>
+  {% for comment in comments %}
+    {% if request.user == comment.user %}
+      <p>내용 :
+        {{comment.content}}
+        - 작성자 :
+        {{comment.user}}
+        -
+        <a href="{% url 'articles:comment_delete' article.pk comment.pk %}">
+          삭제
+        </a>
+      </p>
+      <hr>
+    {% else %}
+      <p>내용 :
+        {{comment.content}}
+        - 작성자 :
+        {{comment.user}}
+
+      </p>
+      <hr>
+    {% endif %}
+
+  {% endfor %}
+{% endblock content %}
